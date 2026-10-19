@@ -1,11 +1,11 @@
-# Vatsal — Minimal Top Navigation Portfolio
+# Vatsal Singhal — Academic Portfolio
 
-Minimal academic-style landing page with horizontal navigation across the top, a short intro, contact links, and an optional dark-mode toggle. No project or publication details are included.
+A minimal, responsive academic-style portfolio for Vatsal Singhal, built with plain HTML, CSS, and JavaScript.
 
-## Customize
-- Replace `YOUR_EMAIL@example.com` with your email.
-- Replace the LinkedIn URL with your profile.
-- Navigation links point to separate pages you can create later; remove any labels you do not need.
+## Files
+- `index.html` contains the profile, research interests, and contact links.
+- `style.css` contains the responsive layout and light/dark themes.
+- `script.js` provides the theme toggle, mobile navigation, and current year.
 
 ## GitHub Pages
 1. Create a repository named `vatsal-2110.github.io`.
