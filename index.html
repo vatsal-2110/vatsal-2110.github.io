@@ -6,93 +6,86 @@
   <meta name="theme-color" content="#ffffff">
   <title>Vatsal</title>
   <style>
-    :root {
-      --text: #242424;
-      --muted: #686868;
-      --line: #e8e8e8;
-      --link: #2858a6;
-      --width: 860px;
+    :root { --bg:#fff; --text:#242424; --muted:#686868; --line:#e7e7e7; --link:#285aa6; --hover:#f5f5f5; }
+    [data-theme="dark"] { color-scheme:dark; --bg:#171717; --text:#eee; --muted:#b5b5b5; --line:#333; --link:#a8c5ff; --hover:#252525; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 Georgia,"Times New Roman",serif; }
+    a { color:var(--link); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .wrap { width:min(900px, calc(100% - 44px)); margin:0 auto; }
+    .topbar { border-bottom:1px solid var(--line); background:var(--bg); }
+    nav { min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { color:var(--text); font:700 15px/1.4 Arial,Helvetica,sans-serif; white-space:nowrap; }
+    .nav-right { display:flex; align-items:center; gap:20px; }
+    .navlinks { display:flex; align-items:center; flex-wrap:wrap; gap:19px; }
+    .navlinks a { color:var(--muted); font:13px/1.5 Arial,Helvetica,sans-serif; }
+    .navlinks a:hover { color:var(--text); text-decoration:none; }
+    .theme { border:1px solid var(--line); color:var(--muted); background:transparent; border-radius:50%; width:29px; height:29px; cursor:pointer; font-size:15px; }
+    .menu { display:none; border:1px solid var(--line); border-radius:4px; color:var(--text); background:transparent; padding:6px 9px; }
+    main { min-height:65vh; }
+    .intro { padding:69px 0 0; }
+    h1 { margin:0 0 17px; font-size:clamp(34px,5vw,43px); line-height:1.2; font-weight:500; letter-spacing:-.035em; }
+    p { max-width:760px; margin:0; color:var(--muted); font-size:17px; line-height:1.85; }
+    .contact { display:flex; flex-wrap:wrap; gap:18px; margin-top:23px; font:13px/1.6 Arial,Helvetica,sans-serif; }
+    footer { margin-top:82px; padding:17px 0 25px; border-top:1px solid var(--line); color:#888; font:12px/1.6 Arial,Helvetica,sans-serif; }
+    @media(max-width:700px) {
+      nav { min-height:60px; flex-wrap:wrap; padding:12px 0; }
+      .nav-right { gap:10px; }
+      .menu { display:block; }
+      .navlinks { display:none; width:100%; padding:8px 0 4px; gap:11px 18px; }
+      .navlinks.open { display:flex; }
+      .intro { padding-top:46px; }
+      p { font-size:16px; }
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background: #fff;
-      font: 16px/1.65 Georgia, "Times New Roman", serif;
-    }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { width: min(var(--width), calc(100% - 40px)); margin: 0 auto; }
-    header { border-bottom: 1px solid var(--line); }
-    nav {
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      font: 14px/1.4 Arial, Helvetica, sans-serif;
-    }
-    .brand { font-weight: 700; font-size: 16px; color: var(--text); }
-    .columns { display: flex; flex-wrap: wrap; gap: 22px; }
-    .columns a { color: var(--muted); }
-    .columns a:hover { color: var(--link); }
-    main { min-height: 65vh; }
-    h1 {
-      margin: 60px 0 14px;
-      font-size: clamp(34px, 6vw, 46px);
-      font-weight: 500;
-      line-height: 1.15;
-      letter-spacing: -.035em;
-    }
-    .intro { max-width: 650px; color: var(--muted); margin: 0; }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 22px;
-      font: 14px/1.5 Arial, Helvetica, sans-serif;
-    }
-    footer {
-      margin-top: 70px;
-      padding: 18px 0 26px;
-      border-top: 1px solid var(--line);
-      color: #888;
-      font: 12px/1.6 Arial, Helvetica, sans-serif;
-    }
-    @media (max-width: 540px) {
-      nav { align-items: flex-start; flex-direction: column; justify-content: center; padding: 14px 0; gap: 10px; }
-      .columns { gap: 15px; }
-      h1 { margin-top: 44px; }
-    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="container" aria-label="Main navigation">
-      <a class="brand" href="#">Vatsal</a>
-      <div class="columns">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
+  <header class="topbar">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="./index.html">Vatsal</a>
+      <div class="nav-right">
+        <div class="navlinks" id="navlinks">
+          <a href="#about">About</a>
+          <a href="./research.html">Research</a>
+          <a href="./resume.html">CV</a>
+          <a href="./blog.html">Writing</a>
+          <a href="./reading.html">Reading</a>
+          <a href="./news.html">News</a>
+          <a href="./experience.html">Experience</a>
+          <a href="./travel.html">Travel</a>
+        </div>
+        <button class="theme" id="theme" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
+        <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Menu</button>
       </div>
     </nav>
   </header>
-
-  <main class="container" id="about">
-    <h1>Vatsal</h1>
-    <p class="intro">Mathematics &amp; Computing student at IIT Roorkee. Interested in machine learning, computer vision, and artificial intelligence.</p>
-    <div class="links" id="contact">
-      <a href="mailto:YOUR_EMAIL@example.com">Email</a>
-      <a href="https://github.com/vatsal-2110">GitHub</a>
-      <a href="https://www.linkedin.com/">LinkedIn</a>
-      <a id="cv" href="cv.pdf">CV</a>
-    </div>
+  <main class="wrap" id="about">
+    <section class="intro">
+      <h1>Vatsal</h1>
+      <p>I am a student in Mathematics &amp; Computing at IIT Roorkee. My interests include machine learning, computer vision, generative AI, and AI security.</p>
+      <div class="contact">
+        <a href="mailto:YOUR_EMAIL@example.com">Email</a>
+        <a href="https://github.com/vatsal-2110" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+      </div>
+    </section>
+    <footer>© <span id="year"></span> Vatsal</footer>
   </main>
-
-  <footer class="container">© <span id="year"></span> Vatsal</footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    document.getElementById("theme").addEventListener("click", () => {
+      const dark = root.getAttribute("data-theme") !== "dark";
+      if (dark) root.setAttribute("data-theme", "dark"); else root.removeAttribute("data-theme");
+    });
+    const menu = document.getElementById("menu");
+    const links = document.getElementById("navlinks");
+    menu.addEventListener("click", () => {
+      const open = links.classList.toggle("open");
+      menu.setAttribute("aria-expanded", String(open));
+    });
+  </script>
 </body>
 </html>
