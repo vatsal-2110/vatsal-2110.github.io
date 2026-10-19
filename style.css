@@ -86,25 +86,27 @@ button:focus-visible {
 }
 
 .social-links {
-  gap: 11px;
+  gap: 4px;
 }
 
 .social-links a {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
   color: var(--muted);
+  border-radius: 50%;
 }
 
 .social-links a:hover {
   color: var(--foreground);
+  background: var(--hover);
   text-decoration: none;
 }
 
 .social-links svg {
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
